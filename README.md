@@ -128,4 +128,23 @@ limits:
   cpu: "1"
 
 7: After changing and committing changes to the master branch, we repeat the steps and check for the current pod status of minikube cluster within namespace sre
-kubectl get pods -n sre
+```
+@sum-sagar ➜ /workspaces/sre
+-week-two (main) $ kubectl get deployment -n sre
+NAME                                READY   UP-TO-DATE   AVAILABLE   AGE
+grafana                             1/1     1            1           65m
+prometheus-kube-state-metrics       1/1     1            1           66m
+prometheus-prometheus-pushgateway   1/1     1            1           66m
+prometheus-server                   1/1     1            1           66m
+upcommerce-app-two                  1/1     1            1           63m
+@sum-sagar ➜ /workspaces/sre-week-two (main) $ kubectl get pods -n sre
+NAME                                                READY   STATUS    RESTARTS        AGE
+grafana-557d966c8c-rqx25                            1/1     Running   2 (4m37s ago)   67m
+prometheus-alertmanager-0                           1/1     Running   2 (4m37s ago)   67m
+prometheus-kube-state-metrics-65468947fb-6bq2j      1/1     Running   2 (4m38s ago)   67m
+prometheus-prometheus-node-exporter-8l6xh           1/1     Running   2 (4m37s ago)   67m
+prometheus-prometheus-pushgateway-76976dc66-2hbjl   1/1     Running   2 (4m37s ago)   67m
+prometheus-server-8444b5b7f7-t7w7m                  2/2     Running   4 (4m37s ago)   67m
+upcommerce-app-two-846fd54f5d-w62lz                 1/1     Running   1 (4m38s ago)   5m32s
+```
+We can see that the upcommerce-app-two-846fd54f5d-w62lz pod is now running.
